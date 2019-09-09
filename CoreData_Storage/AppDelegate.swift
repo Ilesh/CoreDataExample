@@ -26,11 +26,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         PersistanceManager.shared.save()
     }
 
-    // THIS IS THE SIMPLE FUNCTION FOR THE SAVING RECORDS
+    // THIS IS SIMPLE FUNCTION FOR THE SAVING RECORDS
     func Add_Data(){
         guard let entity = NSEntityDescription.entity(forEntityName: "User", in: PersistanceManager.shared.context) else {
             fatalError("entify not found")
-            return
         }
         let user = NSManagedObject.init(entity: entity, insertInto: PersistanceManager.shared.context)
         user.setValue("Ilesh", forKey: "name")
@@ -59,6 +58,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } catch  {
             print("Error: \(error.localizedDescription)")
         }
+        
+        /*
+         //CONSOLE OUTPUT
+         
+         Name: Ilesh
+         Email: secret@test.com
+         Age: 25
+                  
+         */
+        
     }
 }
 
