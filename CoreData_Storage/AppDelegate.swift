@@ -18,16 +18,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         //Add_Data()
-        fetchrecords()
+        //fetchRecords()()
         return true
     }
     
     func applicationWillTerminate(_ application: UIApplication) {
-        PersistanceManager.shared.save()
+        //PersistanceManager.shared.save()
     }
 
     // THIS IS SIMPLE FUNCTION FOR THE SAVING RECORDS
-    func Add_Data(){
+    func addNewRecord(){
         guard let entity = NSEntityDescription.entity(forEntityName: "User", in: PersistanceManager.shared.context) else {
             fatalError("entify not found")
         }
@@ -45,7 +45,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     // FOR FETCH RECORDS
-    func fetchrecords() {
+    func fetchRecords() {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName:"User")
         do {
             if let result = try PersistanceManager.shared.context.fetch(fetchRequest) as? [NSManagedObject] {
@@ -58,16 +58,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } catch  {
             print("Error: \(error.localizedDescription)")
         }
-        
-        /*
-         //CONSOLE OUTPUT
-         
-         Name: Ilesh
-         Email: secret@test.com
-         Age: 25
-                  
-         */
-        
     }
 }
 
+/*
+ //CONSOLE OUTPUT
+ 
+ Name: Ilesh
+ Email: secret@test.com
+ Age: 25
+ 
+ */

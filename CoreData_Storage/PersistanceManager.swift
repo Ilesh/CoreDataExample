@@ -10,7 +10,11 @@ import UIKit
 import CoreData
 
 final class PersistanceManager {
+
+     ////  1
+    
     static let shared = PersistanceManager()
+    
     private init(){
         
     }
@@ -27,7 +31,9 @@ final class PersistanceManager {
         return container
     }()
     
-    // MARK: - Core Data Saving support
+    ////  2
+    
+    // MARK:- FOR THE SAVE
     func save () {
         if context.hasChanges {
             do {
@@ -41,10 +47,12 @@ final class PersistanceManager {
         }
     }
     
+     ////  3
+    
+    // MARK:- FOR RETRIVED DATA GENERIC METHODS FOR THE FETCHING MODELS
     func fetch<T:NSManagedObject>(_ objectType: T.Type) -> [T]{
         let entityName = String(describing: objectType)
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
-        
         do {
             let fetchedOjects = try context.fetch(fetchRequest) as? [T]
             return fetchedOjects ?? [T]()
@@ -52,8 +60,6 @@ final class PersistanceManager {
             print("Error \(error.localizedDescription)")
             return  [T]()
         }
-        
     }
-    
 }
 
