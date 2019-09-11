@@ -12,6 +12,7 @@ class DashboardVC: UIViewController {
 
     //MARK:- IBOUTLET VARIABLE
     
+    @IBOutlet weak var lblBalance: UILabel!
     //MARK:- VARIABLE
     
     //MARK:- VIEW CYCLE START
@@ -21,7 +22,17 @@ class DashboardVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        let arrTransactions = PersistanceManager.shared.fetch(Transactions.self)
+        var dblPlus : Double = 0.0
+        var dblMinus : Double = 0.0
+        arrTransactions.forEach { (element) in
+            if element.transactiontypes.name == TransType.add.rawValue {
+                dblPlus = dblPlus + element.amount
+            }else{
+                dblMinus = dblMinus + element.amount
+            }
+        }
+        lblBalance.text = "Total Balance \n $ \(Int(dblPlus - dblMinus).format()!)"
     }
     
     override func viewDidLayoutSubviews() {

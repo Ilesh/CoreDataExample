@@ -23,9 +23,23 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bVy-mo-8te">
                                         <rect key="frame" x="30" y="64" width="260" height="156"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="255" verticalHuggingPriority="251" text="1234" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fg1-me-8ne">
+                                                <rect key="frame" x="20" y="20" width="220" height="36.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="36.5" id="pgl-PW-28k"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="30"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
                                         <color key="backgroundColor" red="0.37315922975540161" green="0.76762509346008301" blue="0.64696657657623291" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
+                                            <constraint firstItem="Fg1-me-8ne" firstAttribute="top" secondItem="bVy-mo-8te" secondAttribute="top" constant="20" id="DP9-zc-TmY"/>
+                                            <constraint firstItem="Fg1-me-8ne" firstAttribute="leading" secondItem="bVy-mo-8te" secondAttribute="leading" constant="20" id="kes-Z3-A4a"/>
                                             <constraint firstAttribute="height" constant="156" id="wnE-gL-j3c"/>
+                                            <constraint firstAttribute="trailing" secondItem="Fg1-me-8ne" secondAttribute="trailing" constant="20" id="y27-er-TWI"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -226,13 +240,14 @@
                     </view>
                     <navigationItem key="navigationItem" id="rLt-78-9CA"/>
                     <connections>
+                        <outlet property="lblBalance" destination="Fg1-me-8ne" id="TUu-bO-JdD"/>
                         <segue destination="RL0-lw-tME" kind="show" identifier="segExpenceVC" id="Ir2-13-2D9"/>
                         <segue destination="mZS-K1-UIS" kind="show" identifier="segTransactionVC" id="dHQ-4L-oLf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1072.8" y="133.5832083958021"/>
+            <point key="canvasLocation" x="1072.5" y="133.09859154929578"/>
         </scene>
         <!--ExpenceVC-->
         <scene sceneID="VOB-Ie-osd">

@@ -82,7 +82,7 @@ extension TransactionVC : UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TransactionCell", for: indexPath) as! TransactionCell
         let data = self.arrTransactions[indexPath.row]
         cell.lblDate.text = data.date.display
-        cell.lblAumount.text = "$ \(data.amount)"
+        cell.lblAumount.text = "$ \(Int(data.amount).format()!)"
         cell.lblCategory.text = "\(data.categorys.category_name)"
         cell.lblNote.text = data.note ?? ""
         cell.isIncome = data.transactiontypes.name == TransType.add.rawValue ? true : false
