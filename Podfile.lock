@@ -1,0 +1,32 @@
+PODS:
+  - IQKeyboardManagerSwift (6.4.0)
+  - RSKPlaceholderTextView (5.0.2)
+  - Spring (1.0.6)
+
+DEPENDENCIES:
+  - IQKeyboardManagerSwift
+  - RSKPlaceholderTextView
+  - Spring (from `https://github.com/MengTo/Spring.git`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - IQKeyboardManagerSwift
+    - RSKPlaceholderTextView
+
+EXTERNAL SOURCES:
+  Spring:
+    :git: https://github.com/MengTo/Spring.git
+
+CHECKOUT OPTIONS:
+  Spring:
+    :commit: 50d92a5b9e08848387ae95bf44c6ad20834f7083
+    :git: https://github.com/MengTo/Spring.git
+
+SPEC CHECKSUMS:
+  IQKeyboardManagerSwift: ed9b04ee0e3067ffba543283462d619f944b05e5
+  RSKPlaceholderTextView: df72ca93edfac185b98f51cb85e445f54ce8a163
+  Spring: 3d113f14575ef79aec9c5f906dfa4f5001c03254
+
+PODFILE CHECKSUM: 1d27692e4568dbb4f547f4339f729f1915001284
+
+COCOAPODS: 1.6.1

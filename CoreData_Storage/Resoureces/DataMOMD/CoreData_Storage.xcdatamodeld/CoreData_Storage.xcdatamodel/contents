@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="18F132" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Categories" representedClassName=".Categories" syncable="YES">
+        <attribute name="category_name" attributeType="String" syncable="YES"/>
+        <relationship name="categoryTransactiontype" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TransactionType" syncable="YES"/>
+    </entity>
+    <entity name="Transactions" representedClassName=".Transactions" syncable="YES">
+        <attribute name="amount" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="date" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="note" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="categorys" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Categories" syncable="YES"/>
+        <relationship name="transactiontypes" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TransactionType" syncable="YES"/>
+    </entity>
+    <entity name="TransactionType" representedClassName=".TransactionType" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Categories" positionX="-97.43359375" positionY="-179.66796875" width="128" height="75"/>
+        <element name="Transactions" positionX="-375.984375" positionY="-136.5625" width="128" height="120"/>
+        <element name="TransactionType" positionX="-209.01171875" positionY="61.3125" width="128" height="60"/>
+    </elements>
+</model>
