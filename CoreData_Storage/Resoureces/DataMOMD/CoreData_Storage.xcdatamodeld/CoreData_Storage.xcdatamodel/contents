@@ -4,19 +4,25 @@
         <attribute name="category_name" attributeType="String" syncable="YES"/>
         <relationship name="categoryTransactiontype" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TransactionType" syncable="YES"/>
     </entity>
+    <entity name="SubCategory" representedClassName=".SubCategory" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <entity name="Transactions" representedClassName=".Transactions" syncable="YES">
         <attribute name="amount" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="date" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="isFavorite" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="note" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="categorys" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Categories" syncable="YES"/>
         <relationship name="transactiontypes" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TransactionType" syncable="YES"/>
     </entity>
     <entity name="TransactionType" representedClassName=".TransactionType" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="transaction_ID" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
         <element name="Categories" positionX="-97.43359375" positionY="-179.66796875" width="128" height="75"/>
-        <element name="Transactions" positionX="-375.984375" positionY="-136.5625" width="128" height="120"/>
-        <element name="TransactionType" positionX="-209.01171875" positionY="61.3125" width="128" height="60"/>
+        <element name="Transactions" positionX="-375.984375" positionY="-136.5625" width="128" height="135"/>
+        <element name="TransactionType" positionX="-209.01171875" positionY="61.3125" width="128" height="75"/>
+        <element name="SubCategory" positionX="-234" positionY="-45" width="128" height="60"/>
     </elements>
 </model>

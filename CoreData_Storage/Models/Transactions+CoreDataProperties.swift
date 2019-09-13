@@ -2,7 +2,7 @@
 //  Transactions+CoreDataProperties.swift
 //  CoreData_Storage
 //
-//  Created by Ilesh's 2018 on 11/09/19.
+//  Created by Ilesh's 2018 on 13/09/19.
 //  Copyright © 2019 Ilesh's. All rights reserved.
 //
 //
@@ -17,9 +17,10 @@ extension Transactions {
         return NSFetchRequest<Transactions>(entityName: "Transactions")
     }
 
+    @NSManaged public var amount: Double
     @NSManaged public var date: NSDate
     @NSManaged public var note: String?
-    @NSManaged public var amount: Double
+    @NSManaged public var isFavorite: Bool
     @NSManaged public var categorys: Categories
     @NSManaged public var transactiontypes: TransactionType
 

@@ -2,7 +2,7 @@
 //  TransactionType+CoreDataProperties.swift
 //  CoreData_Storage
 //
-//  Created by Ilesh's 2018 on 11/09/19.
+//  Created by Ilesh's 2018 on 13/09/19.
 //  Copyright © 2019 Ilesh's. All rights reserved.
 //
 //
@@ -18,5 +18,6 @@ extension TransactionType {
     }
 
     @NSManaged public var name: String
+    @NSManaged public var transaction_ID: String
 
 }

@@ -84,7 +84,7 @@ extension TransactionVC : UITableViewDelegate, UITableViewDataSource {
         cell.lblDate.text = data.date.display
         cell.lblAumount.text = "$ \(Int(data.amount).format()!)"
         cell.lblCategory.text = "\(data.categorys.category_name)"
-        cell.lblNote.text = data.note ?? ""
+        cell.lblNote.text = data.transactiontypes.transaction_ID
         cell.isIncome = data.transactiontypes.name == TransType.add.rawValue ? true : false
         return cell
     }

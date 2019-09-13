@@ -9,18 +9,48 @@
 import UIKit
 import CoreData
 
-final class PersistanceManager {
+final class PersistanceManager : NSObject {
+    static let moduleName = "CoreData_Storage"
 
      ////  1
-    
     static let shared = PersistanceManager()
-    
-    private init(){
-        
+   
+    private override init(){
     }
     
-    lazy var context = persistentContainer.viewContext
+    lazy var managedObjectModel : NSManagedObjectModel = {
+        let modelURL = Bundle.main.url(forResource: PersistanceManager.moduleName, withExtension: "momd")!
+        return NSManagedObjectModel(contentsOf: modelURL)!
+    }   ()
     
+    lazy var applicaitonDocumentDirectory = {
+       return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last!
+    }()
+    
+    
+    lazy var persistentStoreCoordinator : NSPersistentStoreCoordinator = {
+       let coordinator = NSPersistentStoreCoordinator(managedObjectModel: self.managedObjectModel)
+       
+       let persistentURL = self.applicaitonDocumentDirectory.appendingPathComponent("\(PersistanceManager.moduleName).sqlite")
+       
+        do {
+            try coordinator.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: persistentURL, options: [NSMigratePersistentStoresAutomaticallyOption : true, NSInferMappingModelAutomaticallyOption: true])
+        } catch  {
+            fatalError("Coordinator store error! - \(error)")
+        }
+       return coordinator
+    }()
+    
+    
+    lazy var context : NSManagedObjectContext = {
+        let manageObjectcontext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
+        manageObjectcontext.persistentStoreCoordinator = self.persistentStoreCoordinator
+        return manageObjectcontext
+    }()
+    
+    /*  OLD METHDOS
+     
+    lazy var context = persistentContainer.viewContext
     lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "CoreData_Storage")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
@@ -29,7 +59,7 @@ final class PersistanceManager {
             }
         })
         return container
-    }()
+    }()*/
     
     ////  2
     

@@ -35,12 +35,12 @@ class CategoryListVC: UIViewController {
         tblJobs.estimatedRowHeight = 55
         tblJobs.rowHeight = UITableView.automaticDimension
         
-        /*let category = Categories(context: PersistanceManager.shared.context)
-        category.category_name = "Salary"
+        let category = Categories(context: PersistanceManager.shared.context)
+        category.category_name = "Fuel"
         let tansactionType = TransactionType(context: persistanceManager.context)
         tansactionType.name = TransType.add.rawValue
         category.categoryTransactiontype = tansactionType        
-        persistanceManager.save()*/
+        persistanceManager.save()
     }
     
     override func viewWillAppear(_ animated: Bool) {

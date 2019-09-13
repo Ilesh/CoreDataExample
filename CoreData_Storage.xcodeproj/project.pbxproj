@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		34F5067550A0F4FE0F80815F /* Pods_CoreData_Storage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB79E0939045EA05CC4B1411 /* Pods_CoreData_Storage.framework */; };
+		44576419232B8BC200FD426C /* SubCategory+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44576417232B8BC200FD426C /* SubCategory+CoreDataClass.swift */; };
+		4457641A232B8BC200FD426C /* SubCategory+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44576418232B8BC200FD426C /* SubCategory+CoreDataProperties.swift */; };
 		44882DAD2328CF21000CC0C5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44882D9A2328CF21000CC0C5 /* LaunchScreen.storyboard */; };
 		44882DAE2328CF21000CC0C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44882D9B2328CF21000CC0C5 /* Main.storyboard */; };
 		44882DAF2328CF21000CC0C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44882D9D2328CF21000CC0C5 /* AppDelegate.swift */; };
@@ -72,6 +74,8 @@
 
 /* Begin PBXFileReference section */
 		3CF10BEA4E93B5D6966B9C7E /* Pods-CoreData_Storage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoreData_Storage.debug.xcconfig"; path = "Target Support Files/Pods-CoreData_Storage/Pods-CoreData_Storage.debug.xcconfig"; sourceTree = "<group>"; };
+		44576417232B8BC200FD426C /* SubCategory+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SubCategory+CoreDataClass.swift"; sourceTree = "<group>"; };
+		44576418232B8BC200FD426C /* SubCategory+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SubCategory+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		44882D9A2328CF21000CC0C5 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		44882D9B2328CF21000CC0C5 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		44882D9D2328CF21000CC0C5 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -194,6 +198,8 @@
 		44882DA02328CF21000CC0C5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				44576417232B8BC200FD426C /* SubCategory+CoreDataClass.swift */,
+				44576418232B8BC200FD426C /* SubCategory+CoreDataProperties.swift */,
 				44882DB62328DFE1000CC0C5 /* Categories+CoreDataClass.swift */,
 				44882DB72328DFE1000CC0C5 /* Categories+CoreDataProperties.swift */,
 				44882DB82328DFE1000CC0C5 /* TransactionType+CoreDataClass.swift */,
@@ -557,6 +563,7 @@
 				44882E1A2328EEB3000CC0C5 /* IPView.swift in Sources */,
 				44882DBD2328DFE1000CC0C5 /* Categories+CoreDataProperties.swift in Sources */,
 				44882DE72328E250000CC0C5 /* IPAlertviewController.swift in Sources */,
+				4457641A232B8BC200FD426C /* SubCategory+CoreDataProperties.swift in Sources */,
 				44882E062328E723000CC0C5 /* CategoryListVC.swift in Sources */,
 				44882E152328EB2C000CC0C5 /* AppTheme.swift in Sources */,
 				44882E1C2328EEB3000CC0C5 /* IPTextField.swift in Sources */,
@@ -577,6 +584,7 @@
 				44882E142328EB2C000CC0C5 /* Singleton.swift in Sources */,
 				44882DFD2328E250000CC0C5 /* DateExtensions.swift in Sources */,
 				44882DF22328E250000CC0C5 /* SignedIntegerExtensions.swift in Sources */,
+				44576419232B8BC200FD426C /* SubCategory+CoreDataClass.swift in Sources */,
 				44882E102328E8C0000CC0C5 /* IPDataPicker.swift in Sources */,
 				44882DF02328E250000CC0C5 /* UIImageViewExtensions.swift in Sources */,
 				44882DE42328E250000CC0C5 /* UIView+Extra.swift in Sources */,
